@@ -9,7 +9,7 @@ Ensure using [S3 remote state](https://github.com/lantrix/terraform-remote-state
 
 ```shell
 export accountId=$(aws sts get-caller-identity --query Account --output text)
-terraform init
+terraform init -backend-config="bucket=terraform-state-${accountId}"
 ```
 
 ### Deploy
